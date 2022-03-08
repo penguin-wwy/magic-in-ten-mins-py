@@ -102,7 +102,7 @@ class Nat:
 
 
 class Z(Nat):
-    pass
+    """ Zero """
 
 
 class S(Nat):
@@ -159,7 +159,7 @@ from typing import List, Dict
 
 
 class JsonValue:
-    pass
+    """ json value type """
 
 
 class JsonBool(JsonValue):

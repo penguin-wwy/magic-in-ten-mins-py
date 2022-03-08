@@ -16,7 +16,3 @@ class InfIntList:
 
 def inf_alt():
     return InfIntList(1, lambda: InfIntList(2, inf_alt))
-
-
-if __name__ == "__main__":
-    print(inf_alt().next_one().head)

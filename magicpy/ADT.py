@@ -44,7 +44,7 @@ class Nat:
 
 
 class Z(Nat):
-    pass
+    """ Zero """
 
 
 class S(Nat):
@@ -75,7 +75,7 @@ class Cons(Node):
 
 
 class JsonValue:
-    pass
+    """ json value type """
 
 
 class JsonBool(JsonValue):
