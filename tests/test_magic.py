@@ -47,4 +47,42 @@ class TestHKT:
     def test_from_to(self):
         from magicpy.HKT import Box, from_to
         int_box = Box(1)
-        assert from_to(int_box, lambda x: str(x)).value == "1"
+        assert from_to(int_box, lambda x: str(x)).value() == "1"
+
+
+class TestMonad:
+
+    def test_box_monad(self):
+        from magicpy.Monad import BoxM, Box
+        assert BoxM().pure(1).value() == 1
+        assert str(BoxM().flat_map(Box.with_value(1), lambda x: Box.with_value([x, x + 1]))) == "Box{ [1, 2] }"
+
+    def test_add_mi(self):
+        from magicpy.Monad import add_mi, Maybe
+        assert add_mi(Maybe.with_value(1), Maybe.with_value(2)).value() == 3
+        assert add_mi(Maybe.with_value(1), Maybe.with_value(None)).value() is None
+
+
+def test_state_monad():
+    from magicpy.StateMonad import fib
+    assert fib(0).run_state((0, 1)).value == 0
+    assert fib(1).run_state((0, 1)).value == 1
+    assert fib(2).run_state((0, 1)).value == 1
+    assert fib(3).run_state((0, 1)).value == 2
+    assert fib(4).run_state((0, 1)).value == 3
+    assert fib(5).run_state((0, 1)).value == 5
+    assert fib(6).run_state((0, 1)).value == 8
+    assert fib(7).run_state((0, 1)).value == 13
+
+
+def test_lambda():
+    from magicpy.STLC import Val, Fun, TVal, TArr, App, NilEnv
+    assert Fun(Val("x", TVal("int")),
+               Fun(Val("y", TArr(TVal("int"), TVal("bool"))),
+                   App(Val("y"), Val("x")))).check_type(NilEnv()) \
+           == "(int -> ((int -> bool) -> bool))"
+
+    with pytest.raises(TypeError) as e:
+        Fun(Val("x", TVal("bool")),
+            Fun(Val("y", TArr(TVal("int"), TVal("bool"))),
+                App(Val("y"), Val("x")))).check_type(NilEnv())

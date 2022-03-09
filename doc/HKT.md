@@ -88,7 +88,6 @@ class Box(HKT['Box', A]):
     def __init__(self, v: A):
         self._value = v
 
-    @property
     def value(self) -> A:
         return self._value
 
@@ -106,5 +105,5 @@ def from_to(a: HKT[BoxType, A], f: Callable[[A], B]) -> HKT[BoxType, B]:
 
 ```python
 int_box = Box(1)
-assert from_to(int_box, lambda x: str(x)).value == "1"
+assert from_to(int_box, lambda x: str(x)).value() == "1"
 ```

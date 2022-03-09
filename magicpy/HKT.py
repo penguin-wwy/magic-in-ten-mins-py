@@ -39,19 +39,17 @@ class Box(HKT['Box', A]):
     def __init__(self, v: A):
         self._value = v
 
-    @property
     def value(self) -> A:
         return self._value
 
     @staticmethod
-    def with_value(v: B):
+    def with_value(v: B) -> HKT['Box', B]:
         return Box(v)
+
+    def __repr__(self):
+        return f"Box{{ {self._value} }}"
 
 
 def from_to(a: HKT[BoxType, A], f: Callable[[A], B]) -> HKT[BoxType, B]:
-    return a.with_value(f(a.value))
+    return a.with_value(f(a.value()))
 
-
-int_box = Box(1)
-print(from_to(int_box, lambda x: x + 1).value)
-assert from_to(int_box, lambda x: str(x)).value == "1"

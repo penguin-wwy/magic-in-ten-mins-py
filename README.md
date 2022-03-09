@@ -45,17 +45,17 @@ QQ群：1070975853 |
 高阶类型(Higher Kinded Type)
 [Python 基础]
 
-> 中等 |
+中等 |
 [Markdown](doc/Monad.md) |
 单子(Monad)
 [Python 基础， HKT]
 
-> 较难 |
+较难 |
 [Markdown](doc/StateMonad.md) |
 状态单子(State Monad)
 [Python 基础， HKT ， Monad]
 
-> 中等 |
+中等 |
 [Markdown](doc/STLC.md) |
 简单类型 λ 演算(Simply-Typed Lambda Calculus)
 [Python 基础， ADT ，λ 演算]
