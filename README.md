@@ -1,5 +1,12 @@
 # magic-in-ten-mins-py
 
+十分钟魔法练习 Python 版
+
+执行所有test case
+```
+PYTHONPATH="${PYTHONPATH}:/path/to/project" pipenv run pytest
+```
+
 # 十分钟魔法练习
 
 [Java 版(原版，有不清楚的内容找他) - 玩火](https://github.com/niltok/magic-in-ten-mins) |
@@ -82,7 +89,7 @@ QQ群：1070975853 |
 
 ## 计算理论
 
-> 较难 |
+较难 |
 [Markdown](doc/Lambda.md) |
 λ 演算(Lambda Calculus)
 [Python 基础， ADT]
