@@ -2,6 +2,8 @@
 
 十分钟魔法练习 Python 版
 
+纯属娱乐，不保证全部正确性、准确性，以及Python特性使用的简洁性 (｀∀´)Ψ，使用部分 Python3.10 的内容
+
 执行所有test case
 ```
 PYTHONPATH="${PYTHONPATH}:/path/to/project" pipenv run pytest
@@ -9,11 +11,16 @@ PYTHONPATH="${PYTHONPATH}:/path/to/project" pipenv run pytest
 
 # 十分钟魔法练习
 
-[Java 版(原版，有不清楚的内容找他) - 玩火](https://github.com/niltok/magic-in-ten-mins) |
-[Rust 版 - 光量子](https://github.com/PhotonQuantum/magic-in-ten-mins-rs) |
-[C++ 版 - 图斯卡蓝瑟](https://github.com/tusikalanse/magic-in-ten-mins-cpp) |
-[C# 版 - CWKSC](https://github.com/CWKSC/magic-in-ten-mins-csharp) |
-[Lua 版 - Ofey Chan](https://github.com/ofey404/magic-in-ten-mins-lua) |
+[Java 版(原版，有不清楚的内容找他) - 玩火](https://github.com/niltok/magic-in-ten-mins)
+
+[Rust 版 - 光量子](https://github.com/PhotonQuantum/magic-in-ten-mins-rs)
+
+[C++ 版 - 图斯卡蓝瑟](https://github.com/tusikalanse/magic-in-ten-mins-cpp)
+
+[C# 版 - CWKSC](https://github.com/CWKSC/magic-in-ten-mins-csharp)
+
+[Lua 版 - Ofey Chan](https://github.com/ofey404/magic-in-ten-mins-lua)
+
 [Ocaml 版 - 光吟](https://github.com/LighghtEeloo/magic-in-ten-mins-ml)
 
 抽象与组合
