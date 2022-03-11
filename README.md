@@ -75,7 +75,7 @@ QQ群：1070975853 |
 [Python 基础， ADT ，λ 演算]
 
 中等 |
-Markdown(doc/SystemF.md) |
+[Markdown](doc/SystemF.md) |
 系统 F(System F)
 [Python 基础， ADT ，简单类型 λ 演算]
 
