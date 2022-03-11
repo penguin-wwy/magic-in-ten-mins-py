@@ -74,7 +74,7 @@ QQ群：1070975853 |
 简单类型 λ 演算(Simply-Typed Lambda Calculus)
 [Python 基础， ADT ，λ 演算]
 
-> 中等 |
+中等 |
 Markdown(doc/SystemF.md) |
 系统 F(System F)
 [Python 基础， ADT ，简单类型 λ 演算]

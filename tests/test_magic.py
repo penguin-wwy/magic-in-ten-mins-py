@@ -75,7 +75,7 @@ def test_state_monad():
     assert fib(7).run_state((0, 1)).value == 13
 
 
-def test_lambda():
+def test_simply_typed_lambda_calculus():
     from magicpy.STLC import Val, Fun, TVal, TArr, App, NilEnv
     assert Fun(Val("x", TVal("int")),
                Fun(Val("y", TArr(TVal("int"), TVal("bool"))),
@@ -86,3 +86,39 @@ def test_lambda():
         Fun(Val("x", TVal("bool")),
             Fun(Val("y", TArr(TVal("int"), TVal("bool"))),
                 App(Val("y"), Val("x")))).check_type(NilEnv())
+
+
+def test_lambda_calculus():
+    from magicpy.Lambda import App, Fun, Val
+    expr = App(
+        Fun(
+            Val("x"),
+            App(Val("x"), Fun("x", Val("x")))
+        ),
+        Val("y")
+    )
+    assert str(expr) == "((λ x. (x (λ x. x))) y)"
+
+def test_system_f():
+    from magicpy.STLC import NilEnv
+    from magicpy.SystemF import Forall, Fun, App, Val, TVal, TArr, TForall, AppT
+    T = Forall(TVal('a'), Fun(
+        Val('x', TVal('a')),
+        Fun(Val('y', TVal('a')), Val('x'))
+    )).gen_uuid()
+
+    F = Forall(TVal('a'), Fun(
+        Val('x', TVal('a')),
+        Fun(Val('y', TVal('a')), Val('y'))
+    )).gen_uuid()
+
+    Bool = TForall(TVal('x'),
+                   TArr(TVal('x'),
+                        TArr(TVal('x'), TVal('x')))).gen_uuid()
+
+    IF = Forall(TVal('a'), Fun(
+        Val('b', Bool), Fun(Val('x', TVal('a')),
+                            Fun(Val('y', TVal('a')), App(App(AppT(Val('b', Bool), TVal('a')), Val('x')), Val('y'))))
+    )).gen_uuid()
+    assert str(T.check_type(NilEnv())) == "(∀ a. (a -> (a -> a)))"
+    assert str(IF.check_type(NilEnv())) == "(∀ a. ((∀ x. (x -> (x -> x))) -> (a -> (a -> a))))"

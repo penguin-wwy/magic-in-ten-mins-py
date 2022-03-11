@@ -95,12 +95,3 @@ class App(Expr):
 
     def apply_uuid(self, v: 'Val') -> 'Expr':
         return Fun(self.f.apply_uuid(v), self.x.apply_uuid(v))
-
-
-expr = App(
-    Fun(
-        Val("x"),
-        App(Val("x"), Fun("x", Val("x")))
-    ),
-    Val("y")
-)
