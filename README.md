@@ -101,13 +101,18 @@ Markdown(doc/PiSigma.md) |
 λ 演算(Lambda Calculus)
 [Python 基础， ADT]
 
-> 偏易 |
-Markdown(doc/EvalStrategy.md) |
+> 较难 |
+Markdown(doc/DBI.md) |
+De Bruijn 索引(De Bruijn index)
+[Java 基础，ADT，λ 演算]
+
+ 偏易 |
+[Markdown](doc/EvalStrategy.md) |
 求值策略(Evaluation Strategy)
 [Python 基础， λ 演算]
 
-> 较难 |
-Markdown(doc/ChurchE.md) |
+ 较难 |
+[Markdown](doc/ChurchE.md) |
 丘奇编码(Church Encoding)
 [λ 演算]
 
