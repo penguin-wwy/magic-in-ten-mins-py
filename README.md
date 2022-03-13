@@ -104,7 +104,7 @@ Markdown(doc/PiSigma.md) |
 > 较难 |
 Markdown(doc/DBI.md) |
 De Bruijn 索引(De Bruijn index)
-[Java 基础，ADT，λ 演算]
+[Python 基础，ADT，λ 演算]
 
  偏易 |
 [Markdown](doc/EvalStrategy.md) |
@@ -121,8 +121,8 @@ Markdown(doc/ScottE.md) |
 斯科特编码(Scott Encoding)
 [构造演算， ADT ， μ]
 
-> 中等 |
-Markdown(doc/YCombinator.md) |
+中等 |
+[Markdown](doc/YCombinator.md) |
 Y 组合子(Y Combinator)
 [Python 基础，λ 演算，λ 演算编码]
 
@@ -150,8 +150,8 @@ Markdown(doc/LeiEq.md) |
 
 ## 编程范式
 
-> 简单 |
-Markdown(doc/TableDriven.md) |
+简单 |
+[Markdown](doc/TableDriven.md) |
 表驱动编程(Table-Driven Programming)
 [简单 Python 基础]
 
@@ -168,7 +168,7 @@ Markdown(doc/Algeff.md) |
 > 中等 |
 Markdown(doc/DepsInj.md) |
 依赖注入(Dependency Injection)
-[Java 基础， Monad ，代数作用]
+[Python 基础， Monad ，代数作用]
 
 > 中等 |
 Markdown(doc/Lifting.md) |
