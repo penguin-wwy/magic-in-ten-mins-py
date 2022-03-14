@@ -155,13 +155,13 @@ Markdown(doc/LeiEq.md) |
 表驱动编程(Table-Driven Programming)
 [简单 Python 基础]
 
-> 简单 |
-Markdown(doc/Continuation.md) |
+简单 |
+[Markdown](doc/Continuation.md) |
 续延(Continuation)
 [简单 Python 基础]
 
-> 中等 |
-Markdown(doc/Algeff.md) |
+中等 |
+[Markdown](doc/Algeff.md) |
 代数作用(Algebraic Effect)
 [简单 Python 基础，续延]
 

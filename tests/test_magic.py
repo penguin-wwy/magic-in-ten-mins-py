@@ -99,6 +99,7 @@ def test_lambda_calculus():
     )
     assert str(expr) == "((λ x. (x (λ x. x))) y)"
 
+
 def test_system_f():
     from magicpy.STLC import NilEnv
     from magicpy.SystemF import Forall, Fun, App, Val, TVal, TArr, TForall, AppT
@@ -122,3 +123,32 @@ def test_system_f():
     )).gen_uuid()
     assert str(T.check_type(NilEnv())) == "(∀ a. (a -> (a -> a)))"
     assert str(IF.check_type(NilEnv())) == "(∀ a. ((∀ x. (x -> (x -> x))) -> (a -> (a -> a))))"
+
+
+class TestContinuationAndAlgeff:
+
+    def test_cont(self, capsys: CaptureFixture):
+        from magicpy.Continuation import cont1
+        cont1()
+        out, err = capsys.readouterr()
+        assert "2\n" == out
+
+    def test_login(self, capsys: CaptureFixture):
+        from magicpy.Continuation import logic1, logic2, login3
+        logic1(lambda i2: logic2(i2, lambda i3: login3(i3, lambda _: None)))
+        out, err = capsys.readouterr()
+        assert "2\n" == out
+
+    def test_try_run(self, capsys: CaptureFixture):
+        from magicpy.Continuation import try_run
+        try_run(1)
+        assert "final\n" == capsys.readouterr()[0]
+        try_run(0)
+        assert "catch t==0\n" == capsys.readouterr()[0]
+
+    def test_resume(self, capsys: CaptureFixture):
+        from magicpy.Algeff import try_run
+        try_run(0)
+        out_lines = capsys.readouterr()[0].splitlines()
+        assert "catch t==0 and resumed" == out_lines[0]
+        assert "final" == out_lines[1]
