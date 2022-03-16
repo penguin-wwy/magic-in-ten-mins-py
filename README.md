@@ -165,8 +165,8 @@ Markdown(doc/LeiEq.md) |
 代数作用(Algebraic Effect)
 [简单 Python 基础，续延]
 
-> 中等 |
-Markdown(doc/DepsInj.md) |
+中等 |
+[Markdown](doc/DepsInj.md) |
 依赖注入(Dependency Injection)
 [Python 基础， Monad ，代数作用]
 
