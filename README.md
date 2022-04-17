@@ -170,8 +170,8 @@ Markdown(doc/LeiEq.md) |
 依赖注入(Dependency Injection)
 [Python 基础， Monad ，代数作用]
 
-> 中等 |
-Markdown(doc/Lifting.md) |
+中等 |
+[Markdown](doc/Lifting.md) |
 提升(Lifting)
 [Python 基础， HKT ， Monad]
 
